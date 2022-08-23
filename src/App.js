@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Boton from './components/Boton';
+import Input from './components/Input';
+
 
 function App() {
+  const [inputName, setInputName] = useState("");
+  const [inputPassword, setInputPassword] = useState("");
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Estado de los componentes y eventos</h1>
+      <Input 
+        inputName={inputName}
+        setInputName={setInputName}
+        inputPassword={inputPassword}
+        setInputPassword={setInputPassword}
+      />
+      <Boton 
+        inputPassword={inputPassword}
+      />
     </div>
   );
 }
